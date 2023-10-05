@@ -3,8 +3,8 @@ import useFindTopGames from '../hooks/useGames';
 import GamesGrid from './GamesGrid';
 
 function GamesDisplay() {
-    const games = useFindTopGames();
-
+    const games = findTopGames(2023, false);
+    console.log(games);
     return (
         <>
             <h1>TOP 10 GAMES</h1>
