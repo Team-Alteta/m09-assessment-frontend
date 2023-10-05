@@ -3,7 +3,7 @@ import useFindTopGames from '../hooks/useGames';
 import GamesGrid from './GamesGrid';
 
 function GamesDisplay() {
-    const games = findTopGames(2023, false);
+    const games = useFindTopGames(2023, false);
     console.log(games);
     return (
         <>
@@ -15,3 +15,4 @@ function GamesDisplay() {
 }
 
 export default GamesDisplay;
+       
