@@ -1,21 +1,19 @@
 import { BASE_URL } from './baseUrl';
 
 export async function findTopGames() {
-    const endPointUrl = BASE_URL + '/multiquery';
-
     const config = {
         method: 'POST',
-        headers: {
-            'Client-ID': `${process.env.IGDB_ID}`,
-            'Authorization': `${process.env.IGDB_KEY}`,
-        },
         body: `
-            query genres "Genres" {
-                fields name id;
-                limit 100;
-            };
+        fields *, screenshots.*; where first_release_date >= 1672560000 & rating > 75 & themes >= 1; sort rating desc; limit 10;
         `
     };
-        
-    const response = await fetch(endPointUrl, config);
+
+    const response = await fetch(BASE_URL + "/games", config);
+    if (response.ok) {
+        return response.json();
+    } else {
+        return Promise.reject(
+            new Error(`Unexpected status code ${response.status}`)
+        );
+    }
 }

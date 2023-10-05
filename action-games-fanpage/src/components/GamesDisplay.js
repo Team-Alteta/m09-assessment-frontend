@@ -1,7 +1,8 @@
 import { findTopGames } from '../services/igdbService';
 
 function GamesDisplay() {
-    findTopGames();
+    const games = findTopGames();
+    console.log(games);
     return (
         <div>Games Display</div>
     )

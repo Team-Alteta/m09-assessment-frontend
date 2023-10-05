@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://api.igdb.com/v4';
+export const BASE_URL = 'http://localhost:8080';
