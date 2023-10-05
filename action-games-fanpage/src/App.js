@@ -1,4 +1,4 @@
-import GamesDisplay from './components/GamesDisplay';
+import GamesDisplay from './components/GamesDisplay.js';
 
 import './App.css';
 

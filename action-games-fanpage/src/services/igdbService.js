@@ -1,10 +1,40 @@
 import { BASE_URL } from './baseUrl';
 
-export async function findTopGames() {
+function getYearInUnixTime(year){
+
+    const date = new Date(`${year}.01.01`);
+
+    return Math.floor(date.getTime() / 1000);
+}
+
+
+export async function findTopGames(year, singleplayer) {
+
+    //Adding a year parameter and convert to unix
+    const yearInUnix = getYearInUnixTime(year);
+
     const config = {
         method: 'POST',
         body: `
-        fields *, screenshots.*; where first_release_date >= 1672560000 & rating > 75 & themes >= 1; sort rating desc; limit 10;
+        fields name, 
+        aggregated_rating, 
+        aggregated_rating_count, 
+        cover.image_id, 
+        multiplayer_modes, 
+        first_release_date, 
+        themes, 
+        rating, 
+        rating_count, 
+        total_rating, 
+        screenshots.image_id, 
+        websites.*; 
+        
+        where first_release_date >= ${yearInUnix} 
+        & themes = (1) 
+        & ${singleplayer ? 'rating_count > 25' : 'rating_count > 0'} 
+        & ${singleplayer ? 'game_modes = (1) & game_modes != (2)' : 'game_modes = (2)'}; 
+        sort total_rating desc; 
+        limit 10;
         `
     };
 
