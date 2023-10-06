@@ -30,6 +30,7 @@ export async function findTopGames(year, singleplayer) {
         websites.*; 
         
         where first_release_date >= ${yearInUnix} 
+        & first_release_date < ${yearInUnix + 31536000}
         & themes = (1) 
         & ${singleplayer ? 'rating_count > 25' : 'rating_count > 0'} 
         & ${singleplayer ? 'game_modes = (1) & game_modes != (2)' : 'game_modes = (2)'}; 

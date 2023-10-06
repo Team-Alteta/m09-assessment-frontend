@@ -1,10 +1,13 @@
+import { useLocation } from 'react-router-dom';
 import useFindTopGames from '../hooks/useGames';
 
 import GamesGrid from './GamesGrid';
 
 function GamesDisplay() {
-    const games = useFindTopGames(2023, false);
-    console.log(games);
+    const location = useLocation();
+
+    const {year, singleplayer} = location.state;
+    const games = useFindTopGames(year, singleplayer);
     return (
         <>
             <h1>TOP 10 GAMES</h1>
