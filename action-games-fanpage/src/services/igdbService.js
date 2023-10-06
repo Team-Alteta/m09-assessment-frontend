@@ -22,6 +22,7 @@ export async function findTopGames(year, singleplayer) {
         cover.image_id, 
         multiplayer_modes, 
         first_release_date, 
+        summary, 
         themes, 
         rating, 
         rating_count, 

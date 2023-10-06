@@ -9,7 +9,7 @@ function Nav() {
                     <Link to={"/"} className="nav-link" >About Us</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to={"/single-player"} className="nav-link" >Single Player Action Games</Link>
+                    <Link to={"/singleplayer"} className="nav-link" >Single Player Action Games</Link>
                 </li>
                 <li className="nav-item">
                     <Link to={"/multiplayer"} className="nav-link" >Multiplayer Action Games</Link>
