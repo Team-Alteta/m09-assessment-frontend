@@ -10,7 +10,7 @@ function useFindTopGames(year, singleplayer) {
             .catch(error => {
                 console.error(error);
             });
-    }, []);
+    }, [year, singleplayer]);
 
     return games;
 }
