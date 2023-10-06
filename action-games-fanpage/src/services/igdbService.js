@@ -24,6 +24,7 @@ export async function findTopGames(year, singleplayer) {
         first_release_date, 
         summary, 
         themes, 
+        involved_companies.*, 
         rating, 
         rating_count, 
         total_rating, 

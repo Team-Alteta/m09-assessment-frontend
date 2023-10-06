@@ -8,6 +8,7 @@ function GamesDisplay() {
 
     const {year, singleplayer} = location.state;
     const games = useFindTopGames(year, singleplayer);
+    console.log(games);
     return (
         <>
             <h1>TOP 10 {singleplayer ? 'SINGLEPLAYER' : 'MULTIPLAYER'} GAMES OF {year}</h1>
