@@ -14,7 +14,7 @@ function PostViewer({ category }) {
         rows.push(<>
             <Link className='btn btn-outline-primary btn-block d-flex justify-content-center' 
             to='/gamesdisplay' 
-            state={{year: year, singleplayer: singleplayer}}>
+            state={{year: i, singleplayer: singleplayer}}>
                 Top 10 games of {i}
             </Link>
             <br/>
