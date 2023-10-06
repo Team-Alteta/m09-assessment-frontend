@@ -1,11 +1,50 @@
 import Card from 'react-bootstrap/Card';
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 function BodyRatings({ userRating, userCount, criticRating, criticCount}) {
+
+    console.log(criticRating);
     return (
         <Card.Body>
-            <Card.Text>critic aggregated_rating, critic aggregated_rating_count</Card.Text>
-            <Card.Text>user rating, user rating_count</Card.Text>
+            <div className="row">
+                <div className="col-md-6">
+                    <CircularProgressbarWithChildren value={Math.round(userRating)}>
+                        <div style={{ fontSize: 50, marginTop: -5 }}>
+                            <strong>{Math.round(userRating)}</strong><br/>
+                        </div>
+                        <strong>User Rating</strong>
+                        <div style={{ fontSize: 14, marginTop: -5 }}>
+                            <span>{userCount} votes</span>
+                        </div>
+                    </CircularProgressbarWithChildren>
+                </div>
+
+                <div className="col-md-6">
+                    {criticRating && (
+                        <CircularProgressbarWithChildren value={Math.round(criticRating)}>
+                            <div style={{ fontSize: 50, marginTop: -5 }}>
+                                <strong>{Math.round(criticRating)}</strong><br/>
+                            </div>
+                            <strong>Critic Rating</strong>
+                            <div style={{ fontSize: 14, marginTop: -5 }}>
+                                <span>{criticCount} votes</span>
+                            </div>
+                        </CircularProgressbarWithChildren>
+                    )}
+                </div>
+            </div>
         </Card.Body>
     );
+
+}
+
+function getRatingColor(rating) {
+    if (rating >= 0 && rating <= 39) {
+        return "bg-danger";
+    } else if (rating >= 40 && rating <= 69) {
+        return "bg-warning";
+    } else {
+        return "bg-success";
+    }
 }
 
 export default BodyRatings;
