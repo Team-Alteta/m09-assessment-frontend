@@ -32,7 +32,38 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.header {
+  color: white;
+  font-size: 35px;
+  font-family: Arial;
+  text-align: center;
+  outline: black;
+}
+
+body {
+  background-color: #451720;
+  color: white;
+  padding: 25px;
+  font-family: Arial;
+  text-align: center;
+}
+
+.description {
+  color: white;
+  font-size: 16px;
+  font-family: Arial;
+  text-align: center;
+}
+
+.nav-item {
+  color: white;
+  font-size: 16px;
+  font-family: Arial;
+  text-align: center;
 }
