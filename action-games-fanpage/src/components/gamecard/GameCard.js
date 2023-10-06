@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card';
 import BodyInfo from './BodyInfo';
 import BodyRatings from './BodyRatings';
 import BodyLinks from './BodyLinks';
+import Fade from 'react-reveal/Fade';
 
 function GameCard({game, idx}) {
     const image = `https://images.igdb.com/igdb/image/upload/t_720p/${game.cover.image_id}.jpg`;
@@ -10,6 +11,7 @@ function GameCard({game, idx}) {
     // stretch goal: slideshow of screenshots
     // stretch goal: themes
     return (
+        <Fade>
         <Card>
             <Card.Header>
                 <Card.Title>{idx+1}. {game.name}</Card.Title>
@@ -24,6 +26,8 @@ function GameCard({game, idx}) {
                 criticCount={game.aggregated_rating_count}/>
             <BodyLinks websites={game.websites}/>
         </Card>
+        </Fade>
+
     )
 }
 
