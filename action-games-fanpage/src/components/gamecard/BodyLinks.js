@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-function BodyLinks() {
+function BodyLinks({ websites }) {
     // url (stretch goal), use websites - category 1 is the official
     return (
         <Card.Body>

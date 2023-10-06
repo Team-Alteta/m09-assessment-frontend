@@ -7,7 +7,7 @@ function GamesGrid({games}) {
         <Row xs={1} md={2} lg={3} xl={4} className="g-4">
             {games.map((game, idx) => (
                 <Col key={idx}>
-                    <GameCard game={game}/>
+                    <GameCard idx={idx} game={game}/>
                 </Col>
             ))}
         </Row>
