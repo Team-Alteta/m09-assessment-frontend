@@ -8,14 +8,13 @@ function GamesDisplay() {
 
     const {year, singleplayer} = location.state;
     const games = useFindTopGames(year, singleplayer);
+    console.log(games);
     return (
         <>
-            <h1>TOP 10 GAMES</h1>
-            <div>Stretch Goal: Filter</div>
+            <h1>TOP 10 {singleplayer ? 'SINGLEPLAYER' : 'MULTIPLAYER'} GAMES OF {year}</h1>
             <GamesGrid games={games}/>
         </>
     )
 }
 
 export default GamesDisplay;
-       

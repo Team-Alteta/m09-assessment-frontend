@@ -11,20 +11,26 @@ function PostViewer({ category }) {
 
     const rows = [];
     for(let i = 2010; i <= year; i++){
-        rows.push(<>
-            <Link className='btn btn-outline-primary btn-block d-flex justify-content-center' 
+        rows.unshift(<>
+            <Link className='btn btn-outline-primary btn-block btn-large d-flex justify-content-center p-3' 
             to='/gamesdisplay' 
             state={{year: i, singleplayer: singleplayer}}>
-                Top 10 games of {i}
+                <b>Top 10 games of {i}</b>
             </Link>
             <br/>
         </>);
     }
 
     return (
-        <div className='w-100 p-3'>
-            {rows}
-        </div>
+        <>
+            <div>
+                <h1>Top {singleplayer ? 'Singleplayer' : 'Multiplayer'} Games</h1>
+                <div className='w-100 p-3'>
+                    {rows}
+                </div>
+            </div>
+        </>
+
     )
 }
 

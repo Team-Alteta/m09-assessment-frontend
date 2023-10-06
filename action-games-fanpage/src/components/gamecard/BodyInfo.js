@@ -1,10 +1,8 @@
 import Card from 'react-bootstrap/Card';
-function BodyInfo({ name, date }) {
+function BodyInfo({ date, summary }) {
     return (
         <Card.Body>
-            <Card.Title>{name}</Card.Title>
-            <Card.Subtitle>{date}</Card.Subtitle>
-            <Card.Text>Placeholder text about the game</Card.Text>
+            <Card.Text>{summary}</Card.Text>
         </Card.Body>
     );
 }
