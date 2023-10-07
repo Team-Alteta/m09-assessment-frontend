@@ -95,3 +95,8 @@ body {
   position: relative;
   margin-right: 50px;
 }
+
+.read-or-hide {
+    color: rgb(192, 192, 192);
+    cursor: pointer;
+}
