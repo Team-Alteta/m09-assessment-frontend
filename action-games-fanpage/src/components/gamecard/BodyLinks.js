@@ -3,7 +3,7 @@ function BodyLinks({ websites }) {
     // url (stretch goal), use websites - category 1 is the official
     return (
         <Card.Body>
-            {websites.map((website, idx) => 
+            {websites && websites.map((website, idx) => 
                 {
                     const webInfo = getSingleWebsite(website);
                     
