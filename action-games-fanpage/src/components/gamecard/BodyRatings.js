@@ -2,7 +2,6 @@ import Card from 'react-bootstrap/Card';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 function BodyRatings({ userRating, userCount, criticRating, criticCount}) {
 
-    console.log(criticRating);
     return (
         <Card.Body>
             <div className="row">
@@ -19,17 +18,15 @@ function BodyRatings({ userRating, userCount, criticRating, criticCount}) {
                 </div>
 
                 <div className="col-md-6">
-                    {criticRating && (
-                        <CircularProgressbarWithChildren value={Math.round(criticRating)}>
-                            <div style={{ fontSize: 50, marginTop: -5 }}>
-                                <strong>{Math.round(criticRating)}</strong><br/>
-                            </div>
-                            <strong>Critic Rating</strong>
-                            <div style={{ fontSize: 14, marginTop: -5 }}>
-                                <span>{criticCount} votes</span>
-                            </div>
-                        </CircularProgressbarWithChildren>
-                    )}
+                    <CircularProgressbarWithChildren value={Math.round(criticRating)}>
+                        <div style={{ fontSize: 50, marginTop: -5 }}>
+                            <strong>{criticRating ? Math.round(criticRating) : "NA"}</strong><br/>
+                        </div>
+                        <strong>Critic Rating</strong>
+                        <div style={{ fontSize: 14, marginTop: -5 }}>
+                            <span>{criticCount ? criticCount : 0} votes</span>
+                        </div>
+                    </CircularProgressbarWithChildren>
                 </div>
             </div>
         </Card.Body>
