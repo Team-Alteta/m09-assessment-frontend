@@ -5,7 +5,7 @@ function BodyRatings({ userRating, userCount, criticRating, criticCount}) {
     return (
         <Card.Body>
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-6">
                     <CircularProgressbarWithChildren value={Math.round(userRating)}>
                         <div style={{ fontSize: 50, marginTop: -5 }}>
                             <strong>{Math.round(userRating)}</strong><br/>
@@ -17,7 +17,7 @@ function BodyRatings({ userRating, userCount, criticRating, criticCount}) {
                     </CircularProgressbarWithChildren>
                 </div>
 
-                <div className="col-md-6">
+                <div className="col-6">
                     <CircularProgressbarWithChildren value={Math.round(criticRating)}>
                         <div style={{ fontSize: 50, marginTop: -5 }}>
                             <strong>{criticRating ? Math.round(criticRating) : "NA"}</strong><br/>
