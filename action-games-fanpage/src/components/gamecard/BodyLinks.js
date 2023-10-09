@@ -9,8 +9,8 @@ function BodyLinks({ websites }) {
                         const webInfo = getSingleWebsite(website);
                         
                         return webInfo && (
-                        <div className="col-6 text-start">
-                            <Card.Link href={webInfo.url} key={idx} target="_blank">
+                        <div className="col-6 text-start" key={idx}>
+                            <Card.Link className="col-6 text-start" href={webInfo.url} key={idx} target="_blank">
                                 <img src={webInfo.logo} alt="Image" style={{ width: '30px', margin: '10px'}}/>
                                 {webInfo.name}
                             </Card.Link>
