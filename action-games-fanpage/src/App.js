@@ -4,8 +4,13 @@ import Landing from './components/Landing';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PostViewer from './components/PostViewer.js';
 import Nav from './components/Nav.js';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    document.title = 'Ready, Set, Fight!';
+  }, []);
+
   return (
     <div>
       <h1 className='header'>Ready, Set, Fight!</h1>
