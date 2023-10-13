@@ -1,4 +1,4 @@
-const url = process.env.REACT_APP_API_URL;
+const url = "http://localhost:8080/api";
 
 export async function login(credentials) {
 
@@ -34,7 +34,11 @@ export async function register(credentials) {
   const response = await fetch(url + '/register', init);
   if (response.status === 400) {
     const result = response.json();
-    return { errors: result.messages };
+    result.then(r => {
+      console.log(r.messages);
+      return {errors: r.messages}
+    });
+    // return { errors: result.messages };
   } else if (response.status !== 201) {
     return Promise.reject("Unexpected error, oops.");
   }

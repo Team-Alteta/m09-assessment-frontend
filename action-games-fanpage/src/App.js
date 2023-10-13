@@ -8,6 +8,7 @@ import PostViewer from './components/PostViewer.js';
 import Nav from './components/Nav.js';
 import Error from "./components/Error";
 import AuthContext from "./contexts/AuthContext";
+import SignUpForm from "./components/SignUpForm";
 
 import { refreshToken, logout } from "./services/authAPI";
 
@@ -79,6 +80,7 @@ function App() {
             <Route path="/multiplayer" element={<PostViewer category={'multiplayer'} />} />
             <Route path="/gamesdisplay" element={<GamesDisplay />} />
             <Route path="/login" element={<LoginForm />} />
+            <Route path="/signup" element={<SignUpForm />} />
           </Routes>
         </main>
       </Router>
